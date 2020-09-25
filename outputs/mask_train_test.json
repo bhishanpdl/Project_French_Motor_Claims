@@ -1,0 +1,1 @@
+{"mask_train": "(df_train['ClaimAmount'] > 0).to_numpy().ravel()", "mask_test": "(df_test['ClaimAmount'] > 0).to_numpy().ravel()"}
