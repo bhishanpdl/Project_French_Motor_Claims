@@ -36,7 +36,7 @@ pass through =  ["BonusMalus"]
 |Module | Distribution | y_train | sample_weight | train D2 | test D2 | train MAE | test MSE | train MAE | test MSE |
 | :---|:---|:---|:---|:---|:---| :---|:---| :---|:---|
 |sklearn | Frequency Modelling (Poisson Distribution) | df_train['Frequency']  | df_train['Exposure']|0.051384 | 0.048138 | 0.232085 | 0.224547  | 4.738399 | 2.407906 |
-|sklearn | Severity Modelling (Gamma Distribution) | df_train.loc[mask_train, 'AvgClaimAmount'] | df_train.loc[mask_train, 'ClaimNb'] | Metric | 3.638157e-03 | -4.747382e-04 | 1.859814e+03 | 1.856312e+03 | 4.959565e+06 | 4.827662e+06 |
+|sklearn | Severity Modelling (Gamma Distribution) | df_train.loc[mask_train, 'AvgClaimAmount'] | df_train.loc[mask_train, 'ClaimNb'] | - | 3.638157e-03 | -4.747382e-04 | 1.859814e+03 | 1.856312e+03 | 4.959565e+06 | 4.827662e+06 |
 |sklearn|Pure Premium Modelling (TweedieRegressor) | df_train['PurePremium'] | df_train['Exposure'] | 2.018645e-02 | 1.353285e-02 | 6.580440e+02 | 4.927505e+02 | 1.478259e+09 | 1.622053e+08 |
 |xgboost | Xgboost Tweedie Regression | dtrain.set_base_margin(np.log(df_train['Exposure'].to_numpy())| dtest.set_base_margin(np.log(df_test['Exposure'].to_numpy())) | - | - | 1.760538e+03 | 1.588351e+03 | 1.481952e+09 | 1.659363e+08 |
 |pygam | GAM Linear Model | - | - | - | - | 1.686438e+02 | 1.655408e+02 | 1.785332e+06 | 1.647533e+06 |
