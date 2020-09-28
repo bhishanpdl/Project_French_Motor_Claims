@@ -32,34 +32,31 @@ log and scaling = ["Density"]
 pass through =  ["BonusMalus"]
 ```
 
-# Frequency Modelling (Poisson Distribution)
-For the frequency modelling I used Poisson distribution.
+# Results
+|Module | Distribution | y_train | sample_weight | train D2 | test D2 | train MAE | test MSE | train MAE | test MSE |
+| :---|:---|:---|:---|:---|:---| :---|:---| :---|:---|
+|sklearn | Frequency Modelling (Poisson Distribution) | df_train['Frequency']  | df_train['Exposure']|0.051384 | 0.048138 | 0.232085 | 0.224547  | 4.738399 | 2.407906 |
+|sklearn | Severity Modelling (Gamma Distribution) | df_train.loc[mask_train, 'AvgClaimAmount'] | df_train.loc[mask_train, 'ClaimNb'] | Metric | 3.638157e-03 | -4.747382e-04 | 1.859814e+03 | 1.856312e+03 | 4.959565e+06 | 4.827662e+06 |
+|sklearn|Pure Premium Modelling (TweedieRegressor) | df_train['PurePremium'] | df_train['Exposure'] | 2.018645e-02 | 1.353285e-02 | 6.580440e+02 | 4.927505e+02 | 1.478259e+09 | 1.622053e+08 |
+|xgboost | Xgboost Tweedie Regression | dtrain.set_base_margin(np.log(df_train['Exposure'].to_numpy())| dtest.set_base_margin(np.log(df_test['Exposure'].to_numpy())) | - | - | 1.760538e+03 | 1.588351e+03 | 1.481952e+09 | 1.659363e+08 |
+|pygam | GAM Linear Model | - | - | - | - | 1.686438e+02 | 1.655408e+02 | 1.785332e+06 | 1.647533e+06 |
 
-| Metric | train | test |
-| :---|:---|:---|
-| D2 | 0.051384 | 0.048138 |
-| mean_absolute_error | 0.232085 | 0.224547 |
-| mean_squared_error | 4.738399 | 2.407906 |
 
-# Severity Modelling (Gamma Distribution)
-I used Gamma Regressor for the frequency modelling.
 
-| Metric | train | test |
-| :---|:---|:---|
-| D2 | 3.638157e-03 | -4.747382e-04 |
-| mean_absolute_error | 1.859814e+03 | 1.856312e+03 |
-| mean_squared_error | 4.959565e+06 | 4.827662e+06 |
 
-Here, the D-squared value for test is too worse than the training data. This is because while fitting the train data we have used only claims with `ClaimAmount > 0`. This model is calculating `average claim amount per claim only when claim is more than zero`. This model CAN NOT predict average claim per policy in general.
 
-# Xgboost Tweedie Regression
-I used xgboost with `objective='reg:tweedie'` and applied following offest
-```python
-dtrain.set_base_margin(np.log(df_train['Exposure'].to_numpy()))
-dtest.set_base_margin(np.log(df_test['Exposure'].to_numpy()))
-```
-to model the pure premium. Xgboost does not implement the D-squared value. The model performance is given below:
-| Metric | train | test |
-| :---|:---|:---|
-| mean_absolute_error | 1.760538e+03 | 1.588351e+03 |
-| mean_squared_error | 1.481952e+09 | 1.659363e+08 |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
