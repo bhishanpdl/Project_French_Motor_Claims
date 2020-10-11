@@ -1,8 +1,9 @@
 # Introduction
 Project: French Motor Claims  
 Author: Bhishan Poudel, Ph.D Physics  
-Goal: Implement Frequency model, Severity model and Pure Premium Model  
-Tools: pandas, scikit-learn, xgboost  
+Goal: Implement Frequency modelling, Severity modelling and Pure Premium Modelling  
+Tools: pandas, scikit-learn, xgboost,pygam  
+
 References:
 - https://www.kaggle.com/floser/french-motor-claims-datasets-fremtpl2freq
 - https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.TweedieRegressor.html
