@@ -1,12 +1,15 @@
-# Introduction
-Project: French Motor Claims  
-Author: Bhishan Poudel, Ph.D Physics  
-Goal: Implement Frequency modelling, Severity modelling and Pure Premium Modelling  
-Tools: pandas, scikit-learn, xgboost,pygam  
+<h1 style="background-color:tomato;">Project Introduction </h1>
+
+Project : French Motor Claims  
+Author  : Bhishan Poudel, Ph.D Physics  
+Goal    : Implement Frequency modelling, Severity modelling and Pure Premium Modelling  
+Tools   : pandas, scikit-learn, xgboost,pygam  
 
 References:
 - https://www.kaggle.com/floser/french-motor-claims-datasets-fremtpl2freq
 - https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.TweedieRegressor.html
+
+<h1 style="background-color:tomato;">Project Notebooks </h1>
 
 |  Notebook | Rendered   | Description  |  Author |
 |---|---|---|---|
@@ -20,11 +23,14 @@ References:
 | d01_gam_linear.ipynb  | [ipynb](https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/d01_gam_linear.ipynb), [rendered](https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/d01_gam_linear.ipynb)  | n_splies=10, grid_search  | [Bhishan Poudel](https://bhishanpdl.github.io/)  |
 
 
-# Data
+<h1 style="background-color:tomato;">Data</h1>
+
 - [openml french motor freq](https://www.openml.org/d/41214) (Multiple features.)
 - [openml french motor severity](https://www.openml.org/d/41215) (Two features Id policy and Claim Amount.)
 
-# Data Cleaning
+
+<h1 style="background-color:tomato;">Data Cleaning</h1>
+
 Some of the features are chosen for modelling.
 ```
 one hot encoding = ["VehBrand", "VehPower", "VehGas", "Region", "Area"]
@@ -33,7 +39,8 @@ log and scaling = ["Density"]
 pass through =  ["BonusMalus"]
 ```
 
-# Results
+<h1 style="background-color:tomato;">Results</h1>
+
 |Module | Distribution | y_train | sample_weight | train D2 | test D2 | train MAE | test MSE | train MAE | test MSE |
 | :---|:---|:---|:---|:---|:---| :---|:---| :---|:---|
 |sklearn | Frequency Modelling (Poisson Distribution) | df_train['Frequency']  | df_train['Exposure']|0.051384 | 0.048138 | 0.232085 | 0.224547  | 4.738399 | 2.407906 |
@@ -41,23 +48,4 @@ pass through =  ["BonusMalus"]
 |sklearn|Pure Premium Modelling (TweedieRegressor) | df_train['PurePremium'] | df_train['Exposure'] | 2.018645e-02 | 1.353285e-02 | 6.580440e+02 | 4.927505e+02 | 1.478259e+09 | 1.622053e+08 |
 |xgboost | Xgboost Tweedie Regression | dtrain.set_base_margin(np.log(df_train['Exposure'].to_numpy())| dtest.set_base_margin(np.log(df_test['Exposure'].to_numpy())) | - | - | 1.760538e+03 | 1.588351e+03 | 1.481952e+09 | 1.659363e+08 |
 |pygam | GAM Linear Model | df_train["AvgClaimAmount"].values | N/A | - | - | 1.686438e+02 | 1.655408e+02 | 1.785332e+06 | 1.647533e+06 |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

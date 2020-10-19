@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 style="background-color:tomato;">
+Project Introduction
+</h1>
+<p>Project : French Motor Claims<br />
+Author : Bhishan Poudel, Ph.D Physics<br />
+Goal : Implement Frequency modelling, Severity modelling and Pure Premium Modelling<br />
+Tools : pandas, scikit-learn, xgboost,pygam</p>
+<p>References: - https://www.kaggle.com/floser/french-motor-claims-datasets-fremtpl2freq - https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.TweedieRegressor.html</p>
+<h1 style="background-color:tomato;">
+Project Notebooks
+</h1>
+<table style="width:22%;">
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Notebook</th>
+<th>Rendered</th>
+<th>Description</th>
+<th>Author</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a01_data_cleaning.ipynb</td>
+<td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/a01_data_cleaning.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/a01_data_cleaning.ipynb">rendered</a></td>
+<td>ohe, kbin, logscaling</td>
+<td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
+</tr>
+<tr class="even">
+<td>b01_freq_modelling.ipynb</td>
+<td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b01_freq_modelling.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b01_freq_modelling.ipynb">rendered</a></td>
+<td>Poisson</td>
+<td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
+</tr>
+<tr class="odd">
+<td>b02_severity_modelling.ipynb</td>
+<td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b02_severity_modelling.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b02_severity_modelling.ipynb">rendered</a></td>
+<td>Gamma</td>
+<td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
+</tr>
+<tr class="even">
+<td>b03_pure_premium_modelling.ipynb</td>
+<td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b03_pure_premium_modelling.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b03_pure_premium_modelling.ipynb">rendered</a></td>
+<td>Poisson*Gamma and Tweedie</td>
+<td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
+</tr>
+<tr class="odd">
+<td>b04_tweedie_vs_freqSev.ipynb</td>
+<td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b04_tweedie_vs_freqSev.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b04_tweedie_vs_freqSev.ipynb">rendered</a></td>
+<td>comparison</td>
+<td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
+</tr>
+<tr class="even">
+<td>b05_lorentz_curves_comparison.ipynb</td>
+<td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b05_lorentz_curves_comparison.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b05_lorentz_curves_comparison.ipynb">rendered</a></td>
+<td>Lorentz Curve</td>
+<td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
+</tr>
+<tr class="odd">
+<td>c01_xgboost_tweedie.ipynb</td>
+<td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/c01_xgboost_tweedie.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/c01_xgboost_tweedie.ipynb">rendered</a></td>
+<td>'objective':'reg:tweedie'</td>
+<td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
+</tr>
+<tr class="even">
+<td>d01_gam_linear.ipynb</td>
+<td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/d01_gam_linear.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/d01_gam_linear.ipynb">rendered</a></td>
+<td>n_splies=10, grid_search</td>
+<td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
+</tr>
+</tbody>
+</table>
+<h1 style="background-color:tomato;">
+Data
+</h1>
+<ul>
+<li><a href="https://www.openml.org/d/41214">openml french motor freq</a> (Multiple features.)</li>
+<li><a href="https://www.openml.org/d/41215">openml french motor severity</a> (Two features Id policy and Claim Amount.)</li>
+</ul>
+<h1 style="background-color:tomato;">
+Data Cleaning
+</h1>
+<p>Some of the features are chosen for modelling.</p>
+<pre><code>one hot encoding = [&quot;VehBrand&quot;, &quot;VehPower&quot;, &quot;VehGas&quot;, &quot;Region&quot;, &quot;Area&quot;]
+kbins discretizer = [&quot;VehAge&quot;, &quot;DrivAge&quot;]
+log and scaling = [&quot;Density&quot;]
+pass through =  [&quot;BonusMalus&quot;]</code></pre>
+<h1 style="background-color:tomato;">
+Results
+</h1>
+<table style="width:69%;">
+<colgroup>
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Module</th>
+<th align="left">Distribution</th>
+<th align="left">y_train</th>
+<th align="left">sample_weight</th>
+<th align="left">train D2</th>
+<th align="left">test D2</th>
+<th align="left">train MAE</th>
+<th align="left">test MSE</th>
+<th align="left">train MAE</th>
+<th align="left">test MSE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">sklearn</td>
+<td align="left">Frequency Modelling (Poisson Distribution)</td>
+<td align="left">df_train['Frequency']</td>
+<td align="left">df_train['Exposure']</td>
+<td align="left">0.051384</td>
+<td align="left">0.048138</td>
+<td align="left">0.232085</td>
+<td align="left">0.224547</td>
+<td align="left">4.738399</td>
+<td align="left">2.407906</td>
+</tr>
+<tr class="even">
+<td align="left">sklearn</td>
+<td align="left">Severity Modelling (Gamma Distribution)</td>
+<td align="left">df_train.loc[mask_train, 'AvgClaimAmount']</td>
+<td align="left">df_train.loc[mask_train, 'ClaimNb']</td>
+<td align="left">-</td>
+<td align="left">3.638157e-03</td>
+<td align="left">-4.747382e-04</td>
+<td align="left">1.859814e+03</td>
+<td align="left">1.856312e+03</td>
+<td align="left">4.959565e+06</td>
+</tr>
+<tr class="odd">
+<td align="left">sklearn</td>
+<td align="left">Pure Premium Modelling (TweedieRegressor)</td>
+<td align="left">df_train['PurePremium']</td>
+<td align="left">df_train['Exposure']</td>
+<td align="left">2.018645e-02</td>
+<td align="left">1.353285e-02</td>
+<td align="left">6.580440e+02</td>
+<td align="left">4.927505e+02</td>
+<td align="left">1.478259e+09</td>
+<td align="left">1.622053e+08</td>
+</tr>
+<tr class="even">
+<td align="left">xgboost</td>
+<td align="left">Xgboost Tweedie Regression</td>
+<td align="left">dtrain.set_base_margin(np.log(df_train['Exposure'].to_numpy())</td>
+<td align="left">dtest.set_base_margin(np.log(df_test['Exposure'].to_numpy()))</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">1.760538e+03</td>
+<td align="left">1.588351e+03</td>
+<td align="left">1.481952e+09</td>
+<td align="left">1.659363e+08</td>
+</tr>
+<tr class="odd">
+<td align="left">pygam</td>
+<td align="left">GAM Linear Model</td>
+<td align="left">df_train[&quot;AvgClaimAmount&quot;].values</td>
+<td align="left">N/A</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">1.686438e+02</td>
+<td align="left">1.655408e+02</td>
+<td align="left">1.785332e+06</td>
+<td align="left">1.647533e+06</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
