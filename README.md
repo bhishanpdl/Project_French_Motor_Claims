@@ -41,7 +41,7 @@ pass through =  ["BonusMalus"]
 
 <h1 style="background-color:tomato;">Results</h1>
 
-|Module | Distribution | y_train | sample_weight | train D2 | test D2 | train MAE | test MSE | train MAE | test MSE |
+|Module | Distribution | y_train | sample_weight | train D2 | test D2 | train MAE | test MAE | train MSE | test MSE |
 | :---|:---|:---|:---|:---|:---| :---|:---| :---|:---|
 |sklearn | Frequency Modelling (Poisson Distribution) | df_train['Frequency']  | df_train['Exposure']|0.051384 | 0.048138 | 0.232085 | 0.224547  | 4.738399 | 2.407906 |
 |sklearn | Severity Modelling (Gamma Distribution) | df_train.loc[mask_train, 'AvgClaimAmount'] | df_train.loc[mask_train, 'ClaimNb'] | - | 3.638157e-03 | -4.747382e-04 | 1.859814e+03 | 1.856312e+03 | 4.959565e+06 | 4.827662e+06 |

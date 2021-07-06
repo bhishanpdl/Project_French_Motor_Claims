@@ -1,33 +1,384 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
-  <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </head>
 <body>
-<h1 style="background-color:tomato;">
-Project Introduction
-</h1>
-<p>Project : French Motor Claims<br />
-Author : Bhishan Poudel, Ph.D Physics<br />
-Goal : Implement Frequency modelling, Severity modelling and Pure Premium Modelling<br />
-Tools : pandas, scikit-learn, xgboost,pygam</p>
-<p>References: - https://www.kaggle.com/floser/french-motor-claims-datasets-fremtpl2freq - https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.TweedieRegressor.html</p>
-<h1 style="background-color:tomato;">
-Project Notebooks
-</h1>
-<table style="width:22%;">
-<colgroup>
-<col width="5%" />
-<col width="5%" />
-<col width="5%" />
-<col width="5%" />
-</colgroup>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 style="background-color:tomato;">Project Introduction </h1>
+<p>Project : French Motor Claims<br>
+Author  : Bhishan Poudel, Ph.D Physics<br>
+Goal    : Implement Frequency modelling, Severity modelling and Pure Premium Modelling<br>
+Tools   : pandas, scikit-learn, xgboost,pygam</p>
+<p>References:</p>
+<ul>
+<li>https://www.kaggle.com/floser/french-motor-claims-datasets-fremtpl2freq</li>
+<li>https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.TweedieRegressor.html</li>
+</ul>
+<h1 style="background-color:tomato;">Project Notebooks </h1>
+<table>
 <thead>
-<tr class="header">
+<tr>
 <th>Notebook</th>
 <th>Rendered</th>
 <th>Description</th>
@@ -35,49 +386,49 @@ Project Notebooks
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>a01_data_cleaning.ipynb</td>
 <td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/a01_data_cleaning.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/a01_data_cleaning.ipynb">rendered</a></td>
 <td>ohe, kbin, logscaling</td>
 <td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
 </tr>
-<tr class="even">
+<tr>
 <td>b01_freq_modelling.ipynb</td>
 <td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b01_freq_modelling.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b01_freq_modelling.ipynb">rendered</a></td>
 <td>Poisson</td>
 <td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>b02_severity_modelling.ipynb</td>
 <td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b02_severity_modelling.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b02_severity_modelling.ipynb">rendered</a></td>
 <td>Gamma</td>
 <td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
 </tr>
-<tr class="even">
+<tr>
 <td>b03_pure_premium_modelling.ipynb</td>
 <td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b03_pure_premium_modelling.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b03_pure_premium_modelling.ipynb">rendered</a></td>
 <td>Poisson*Gamma and Tweedie</td>
 <td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>b04_tweedie_vs_freqSev.ipynb</td>
 <td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b04_tweedie_vs_freqSev.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b04_tweedie_vs_freqSev.ipynb">rendered</a></td>
 <td>comparison</td>
 <td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
 </tr>
-<tr class="even">
+<tr>
 <td>b05_lorentz_curves_comparison.ipynb</td>
 <td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b05_lorentz_curves_comparison.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/b05_lorentz_curves_comparison.ipynb">rendered</a></td>
 <td>Lorentz Curve</td>
 <td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>c01_xgboost_tweedie.ipynb</td>
 <td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/c01_xgboost_tweedie.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/c01_xgboost_tweedie.ipynb">rendered</a></td>
 <td>'objective':'reg:tweedie'</td>
 <td><a href="https://bhishanpdl.github.io/">Bhishan Poudel</a></td>
 </tr>
-<tr class="even">
+<tr>
 <td>d01_gam_linear.ipynb</td>
 <td><a href="https://github.com/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/d01_gam_linear.ipynb">ipynb</a>, <a href="https://nbviewer.jupyter.org/github/bhishanpdl/Project_French_Motor_Claims/blob/master/notebooks/d01_gam_linear.ipynb">rendered</a></td>
 <td>n_splies=10, grid_search</td>
@@ -85,113 +436,97 @@ Project Notebooks
 </tr>
 </tbody>
 </table>
-<h1 style="background-color:tomato;">
-Data
-</h1>
+<h1 style="background-color:tomato;">Data</h1>
 <ul>
 <li><a href="https://www.openml.org/d/41214">openml french motor freq</a> (Multiple features.)</li>
 <li><a href="https://www.openml.org/d/41215">openml french motor severity</a> (Two features Id policy and Claim Amount.)</li>
 </ul>
-<h1 style="background-color:tomato;">
-Data Cleaning
-</h1>
+<h1 style="background-color:tomato;">Data Cleaning</h1>
 <p>Some of the features are chosen for modelling.</p>
-<pre><code>one hot encoding = [&quot;VehBrand&quot;, &quot;VehPower&quot;, &quot;VehGas&quot;, &quot;Region&quot;, &quot;Area&quot;]
+<pre class="hljs"><code><div>one hot encoding = [&quot;VehBrand&quot;, &quot;VehPower&quot;, &quot;VehGas&quot;, &quot;Region&quot;, &quot;Area&quot;]
 kbins discretizer = [&quot;VehAge&quot;, &quot;DrivAge&quot;]
 log and scaling = [&quot;Density&quot;]
-pass through =  [&quot;BonusMalus&quot;]</code></pre>
-<h1 style="background-color:tomato;">
-Results
-</h1>
-<table style="width:69%;">
-<colgroup>
-<col width="6%" />
-<col width="6%" />
-<col width="6%" />
-<col width="6%" />
-<col width="6%" />
-<col width="6%" />
-<col width="6%" />
-<col width="6%" />
-<col width="6%" />
-<col width="6%" />
-</colgroup>
+pass through =  [&quot;BonusMalus&quot;]
+</div></code></pre>
+<h1 style="background-color:tomato;">Results</h1>
+<table>
 <thead>
-<tr class="header">
-<th align="left">Module</th>
-<th align="left">Distribution</th>
-<th align="left">y_train</th>
-<th align="left">sample_weight</th>
-<th align="left">train D2</th>
-<th align="left">test D2</th>
-<th align="left">train MAE</th>
-<th align="left">test MSE</th>
-<th align="left">train MAE</th>
-<th align="left">test MSE</th>
+<tr>
+<th style="text-align:left">Module</th>
+<th style="text-align:left">Distribution</th>
+<th style="text-align:left">y_train</th>
+<th style="text-align:left">sample_weight</th>
+<th style="text-align:left">train D2</th>
+<th style="text-align:left">test D2</th>
+<th style="text-align:left">train MAE</th>
+<th style="text-align:left">test MAE</th>
+<th style="text-align:left">train MSE</th>
+<th style="text-align:left">test MSE</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">sklearn</td>
-<td align="left">Frequency Modelling (Poisson Distribution)</td>
-<td align="left">df_train['Frequency']</td>
-<td align="left">df_train['Exposure']</td>
-<td align="left">0.051384</td>
-<td align="left">0.048138</td>
-<td align="left">0.232085</td>
-<td align="left">0.224547</td>
-<td align="left">4.738399</td>
-<td align="left">2.407906</td>
+<tr>
+<td style="text-align:left">sklearn</td>
+<td style="text-align:left">Frequency Modelling (Poisson Distribution)</td>
+<td style="text-align:left">df_train['Frequency']</td>
+<td style="text-align:left">df_train['Exposure']</td>
+<td style="text-align:left">0.051384</td>
+<td style="text-align:left">0.048138</td>
+<td style="text-align:left">0.232085</td>
+<td style="text-align:left">0.224547</td>
+<td style="text-align:left">4.738399</td>
+<td style="text-align:left">2.407906</td>
 </tr>
-<tr class="even">
-<td align="left">sklearn</td>
-<td align="left">Severity Modelling (Gamma Distribution)</td>
-<td align="left">df_train.loc[mask_train, 'AvgClaimAmount']</td>
-<td align="left">df_train.loc[mask_train, 'ClaimNb']</td>
-<td align="left">-</td>
-<td align="left">3.638157e-03</td>
-<td align="left">-4.747382e-04</td>
-<td align="left">1.859814e+03</td>
-<td align="left">1.856312e+03</td>
-<td align="left">4.959565e+06</td>
+<tr>
+<td style="text-align:left">sklearn</td>
+<td style="text-align:left">Severity Modelling (Gamma Distribution)</td>
+<td style="text-align:left">df_train.loc[mask_train, 'AvgClaimAmount']</td>
+<td style="text-align:left">df_train.loc[mask_train, 'ClaimNb']</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">3.638157e-03</td>
+<td style="text-align:left">-4.747382e-04</td>
+<td style="text-align:left">1.859814e+03</td>
+<td style="text-align:left">1.856312e+03</td>
+<td style="text-align:left">4.959565e+06</td>
 </tr>
-<tr class="odd">
-<td align="left">sklearn</td>
-<td align="left">Pure Premium Modelling (TweedieRegressor)</td>
-<td align="left">df_train['PurePremium']</td>
-<td align="left">df_train['Exposure']</td>
-<td align="left">2.018645e-02</td>
-<td align="left">1.353285e-02</td>
-<td align="left">6.580440e+02</td>
-<td align="left">4.927505e+02</td>
-<td align="left">1.478259e+09</td>
-<td align="left">1.622053e+08</td>
+<tr>
+<td style="text-align:left">sklearn</td>
+<td style="text-align:left">Pure Premium Modelling (TweedieRegressor)</td>
+<td style="text-align:left">df_train['PurePremium']</td>
+<td style="text-align:left">df_train['Exposure']</td>
+<td style="text-align:left">2.018645e-02</td>
+<td style="text-align:left">1.353285e-02</td>
+<td style="text-align:left">6.580440e+02</td>
+<td style="text-align:left">4.927505e+02</td>
+<td style="text-align:left">1.478259e+09</td>
+<td style="text-align:left">1.622053e+08</td>
 </tr>
-<tr class="even">
-<td align="left">xgboost</td>
-<td align="left">Xgboost Tweedie Regression</td>
-<td align="left">dtrain.set_base_margin(np.log(df_train['Exposure'].to_numpy())</td>
-<td align="left">dtest.set_base_margin(np.log(df_test['Exposure'].to_numpy()))</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">1.760538e+03</td>
-<td align="left">1.588351e+03</td>
-<td align="left">1.481952e+09</td>
-<td align="left">1.659363e+08</td>
+<tr>
+<td style="text-align:left">xgboost</td>
+<td style="text-align:left">Xgboost Tweedie Regression</td>
+<td style="text-align:left">dtrain.set_base_margin(np.log(df_train['Exposure'].to_numpy())</td>
+<td style="text-align:left">dtest.set_base_margin(np.log(df_test['Exposure'].to_numpy()))</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">1.760538e+03</td>
+<td style="text-align:left">1.588351e+03</td>
+<td style="text-align:left">1.481952e+09</td>
+<td style="text-align:left">1.659363e+08</td>
 </tr>
-<tr class="odd">
-<td align="left">pygam</td>
-<td align="left">GAM Linear Model</td>
-<td align="left">df_train[&quot;AvgClaimAmount&quot;].values</td>
-<td align="left">N/A</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">1.686438e+02</td>
-<td align="left">1.655408e+02</td>
-<td align="left">1.785332e+06</td>
-<td align="left">1.647533e+06</td>
+<tr>
+<td style="text-align:left">pygam</td>
+<td style="text-align:left">GAM Linear Model</td>
+<td style="text-align:left">df_train[&quot;AvgClaimAmount&quot;].values</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">1.686438e+02</td>
+<td style="text-align:left">1.655408e+02</td>
+<td style="text-align:left">1.785332e+06</td>
+<td style="text-align:left">1.647533e+06</td>
 </tr>
 </tbody>
 </table>
+
 </body>
 </html>
